@@ -13,5 +13,5 @@ def recipe(request, title):
 
 def author(request, name):
     author = Author.objects.get(name=name)
-    data = Recipe.objects.get(author=author)
+    data = Recipe.objects.filter(author_id=author.id)
     return render(request, 'author.html', {'data': data, 'author': author})
