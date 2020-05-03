@@ -1,5 +1,7 @@
 <h1>Hello, World!</h1>
 
-{% for title in data %}
-<h4>{{ title }}</h4>
-{% endfor %}
+<ul>
+  {% for title in data %}
+  <li><a href="/recipe/{{title}}">{{ title }}</a></li>
+  {% endfor %}
+</ul>
