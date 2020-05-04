@@ -1,7 +1,5 @@
-<h1>Hello, World!</h1>
-
 <ul>
-  {% for title in recipes %}
-  <li><a href="{% url 'recipe_view' pk=recipe.pk %}">{{ title }}</a></li>
+  {% for recipe in recipes %}
+  <li><a href="{% url 'recipe_view' pk=recipe.pk %}">{{ recipe.title }}</a></li>
   {% endfor %}
 </ul>
