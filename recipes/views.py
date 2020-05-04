@@ -1,17 +1,18 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
 from recipes.models import Author, Recipe
 
 # Create your views here.
 def index(request):
-    data = Recipe.objects.all()
-    return render(request, 'index.html', {'data': data})
+    recipes = Recipe.objects.all()
+    return render(request, 'index.html', {'recipes': recipes})
 
-def recipe(request, title):
-    data = Recipe.objects.get(title=title)
-    return render(request, 'recipe.html', {'data': data})
 
-def author(request, name):
-    author = Author.objects.get(name=name)
-    data = Recipe.objects.filter(author_id=author.id)
-    return render(request, 'author.html', {'data': data, 'author': author})
+def recipe_view(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    return render(request, 'recipe.html', {'recipe': recipe})
+
+
+def author_view(request, pk):
+    author = get_object_or_404(Author, pk=pk)
+    recipes = Recipe.objects.filter(author_id=pk)
+    return render(request, 'author.html', {'recipes': recipes, 'author': author})
