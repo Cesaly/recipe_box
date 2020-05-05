@@ -1,3 +1,10 @@
+<title>Chelsea's Recipe Box</title>
+<h1>Welcome to the recipebox!</h1>
+<div>
+  <h5><a href="{% url 'addrecipe' %}">Add a recipe to the box</a></h5>
+  <h5><a href="{% url 'addauthor' %}">Add an author to the box</a></h5>
+</div>
+
 <ul>
   {% for recipe in recipes %}
   <li><a href="{% url 'recipe_view' pk=recipe.pk %}">{{ recipe.title }}</a></li>
