@@ -1,5 +1,5 @@
-<div><a href="{% url 'homepage' %}">Home</a></div>
-<h2>About {{ author.name}}:</h2>
+{% extends 'base.html' %} {% block content%}
+<h3>About {{ author.name}}:</h3>
 <p>{{ author.bio }}</p>
 
 <h3>All recipes by {{ author.name }}:</h3>
@@ -9,3 +9,4 @@
   <li><a href="{% url 'recipe_view' pk=recipe.pk %}">{{ recipe.title }}</a></li>
   {% endfor %}
 </ul>
+{% endblock %}

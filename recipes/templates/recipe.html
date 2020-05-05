@@ -1,10 +1,11 @@
-<div><a href="{% url 'homepage' %}">Home</a></div>
+{% extends 'base.html' %} {% block content%}
 <h1>{{recipe.title}}</h1>
-<h4>
+<h3>
   Written by
   <a href="{% url 'author_view' pk=recipe.author.pk %}">{{recipe.author}}</a>
-</h4>
+</h3>
 <p>{{recipe.description}}</p>
-<div><b>Total time</b>: {{recipe.time_required}}</div>
-<h5>Instructions:</h5>
+<p>Total time: {{recipe.time_required}}</p>
+<h3>Instructions:</h3>
 <p>{{recipe.instructions}}</p>
+{% endblock %}

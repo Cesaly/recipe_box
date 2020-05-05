@@ -1,0 +1,39 @@
+h1,
+h2,
+h3,
+h4 {
+  color: #3e3e3e;
+  font-family: "Abril Fatface", cursive;
+}
+
+.header_link {
+  display: inline;
+  margin-left: 14em;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: 2em;
+  font-family: "Crimson Text", serif;
+}
+
+a {
+  color: #3580d9;
+}
+
+body {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+p {
+  color: #3e3e3e;
+  font-family: "Crimson Text", serif;
+}
+
+footer {
+  margin-top: 3em;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+}

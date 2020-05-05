@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crimson+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>Chelsea's Recipe Box</title>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li class="header_link">
+          <a href="{% url 'addrecipe' %}">Add a recipe</a>
+        </li>
+        <li class="header_link">
+          <a href="{% url 'addauthor' %}">Add an author</a>
+        </li>
+        <li class="header_link">
+          <a href="{% url 'homepage' %}">Home</a>
+        </li>
+      </ul>
+    </header>
+
+    {% block content%} {% endblock %}
+
+    <footer>
+      <p>Created by Chelsea White</p>
+    </footer>
+  </body>
+</html>
