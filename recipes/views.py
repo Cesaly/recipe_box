@@ -16,3 +16,11 @@ def author_view(request, pk):
     author = get_object_or_404(Author, pk=pk)
     recipes = Recipe.objects.filter(author_id=pk)
     return render(request, 'author.html', {'recipes': recipes, 'author': author})
+
+
+def add_author(request):
+    pass
+
+
+def add_recipe(request):
+    pass
