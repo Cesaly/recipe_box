@@ -12,11 +12,21 @@
     <header>
       <ul>
         <li class="header_link">
+          <a href="{% url 'homepage' %}">Home</a>
+        </li>
+        <li class="header_link">
           <a href="{% url 'addrecipe' %}">Add a recipe</a>
         </li>
         <li class="header_link">
-          <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'addauthor' %}">Add an author</a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="header_link">
+          <a>Logout</a>
+        </li>
+        {% else %}
+        <li class="header_link"><a href="{% url 'loginview' %}">Login</a></li>
+        {% endif %}
       </ul>
     </header>
 

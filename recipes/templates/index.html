@@ -3,7 +3,10 @@
 
 <ul>
   {% for recipe in recipes %}
-  <li><a href="{% url 'recipeview' pk=recipe.pk %}">{{ recipe.title }}</a></li>
+  <li>
+    <a href="{% url 'recipeview' pk=recipe.pk %}">{{ recipe.title }}</a> by
+    <a href="{% url 'authorview' pk=recipe.author.pk %}">{{recipe.author}}</a>
+  </li>
   {% endfor %}
 </ul>
 

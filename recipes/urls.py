@@ -9,6 +9,6 @@ urlpatterns = [
     path('author/<int:pk>/', views.authorview, name='authorview'),
     path('addauthor/', views.addauthor, name='addauthor'),
     path('addrecipe/', views.addrecipe, name='addrecipe'),
-    path('/login/', views.loginview, name='loginview'),
-    path('/logout/', view.logoutview, name='logoutview')
+    path('login/', views.loginview, name='loginview'),
+    # path('logout/', view.logoutview, name='logoutview')
 ]

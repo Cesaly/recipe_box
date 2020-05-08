@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from recipes.models import Author, Recipe
 from recipes.forms import RecipeAddForm, AuthorAddForm, LoginForm
 
@@ -39,18 +40,20 @@ def addauthor(request):
 
 
 def loginview(request):
-    if form.is_valid():
-        form = LoginForm(request=POST)
-        data = form.cleaned_data()
-        user = authenticate(
-            request, username=data['username'], password=data['password']
-        )
-        if user:
-            login(request, user)
-            return HttpResponseRedirect(reverse('homepage'))
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            user = authenticate(
+                request, username=data['username'], password=data['password']
+            )
+            if user:
+                login(request, user)
+                return HttpResponseRedirect(request.GET.get('next', reverse('homepage')))
+    form = LoginForm()
+    return render(request, 'generic_form.html', {'form': form})
 
-    form = LoginForm(request=POST)
 
-
-def logoutview(request):
-    pass
+# def logoutview(request):
+#     logout(request)
+#     return render(request, 'index.html')
