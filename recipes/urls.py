@@ -10,5 +10,5 @@ urlpatterns = [
     path('addauthor/', views.addauthor, name='addauthor'),
     path('addrecipe/', views.addrecipe, name='addrecipe'),
     path('login/', views.loginview, name='loginview'),
-    # path('logout/', view.logoutview, name='logoutview')
+    path('logout/', views.logoutview, name='logoutview')
 ]
