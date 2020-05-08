@@ -22,7 +22,7 @@
         </li>
         {% if user.is_authenticated %}
         <li class="header_link">
-          <a>Logout</a>
+          <a href="{% url 'logoutview' %}">Logout</a>
         </li>
         {% else %}
         <li class="header_link"><a href="{% url 'loginview' %}">Login</a></li>
