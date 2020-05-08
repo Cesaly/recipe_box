@@ -9,6 +9,7 @@ class RecipeAddForm(forms.ModelForm):
             'title',
             'author',
             'description',
+            'ingredients',
             'time_required',
             'instructions'
         ]
