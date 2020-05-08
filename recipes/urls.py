@@ -5,8 +5,10 @@ from recipes import views
 
 urlpatterns = [
     path('', views.index, name='homepage'),
-    path('recipe/<int:pk>/', views.recipe_view, name='recipe_view'),
-    path('author/<int:pk>/', views.author_view, name='author_view'),
+    path('recipe/<int:pk>/', views.recipeview, name='recipeview'),
+    path('author/<int:pk>/', views.authorview, name='authorview'),
     path('addauthor/', views.addauthor, name='addauthor'),
-    path('addrecipe/', views.addrecipe, name='addrecipe')
+    path('addrecipe/', views.addrecipe, name='addrecipe'),
+    path('/login/', views.loginview, name='loginview'),
+    path('/logout/', view.logoutview, name='logoutview')
 ]
