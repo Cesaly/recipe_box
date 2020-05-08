@@ -2,7 +2,7 @@
 <h1>{{recipe.title}}</h1>
 <h3>
   Written by
-  <a href="{% url 'author_view' pk=recipe.author.pk %}">{{recipe.author}}</a>
+  <a href="{% url 'authorview' pk=recipe.author.pk %}">{{recipe.author}}</a>
 </h3>
 <p>{{recipe.description}}</p>
 <p>Total time: {{recipe.time_required}}</p>
