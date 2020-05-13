@@ -63,9 +63,7 @@ def loginview(request):
 
 
 def logoutview(request):
-    if request.method == 'POST':
-        logout(request)
-        return HttpResponseRedirect(reverse('homepage'))
-    return render(request, 'logout.html')
+    logout(request)
+    return HttpResponseRedirect(reverse('homepage'))
 
 
