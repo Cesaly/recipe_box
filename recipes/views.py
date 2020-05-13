@@ -63,9 +63,11 @@ def loginview(request):
 
 
 def logoutview(request):
-    if request.method == 'POST':
-        logout(request)
-        return HttpResponseRedirect(reverse('homepage'))
-    return render(request, 'logout.html')
+    logout(request)
+    return HttpResponseRedirect(reverse('homepage'))
+
+
+def likeview(request, post_id):
+    post = Recipe.objects.get(id=post_id)
 
 
