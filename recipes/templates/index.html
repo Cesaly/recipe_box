@@ -1,7 +1,13 @@
-<h1>Hello, World!</h1>
+{% extends 'base.html' %} {% block content%}
+<h1>Welcome to Chelsea's recipe box!</h1>
 
 <ul>
-  {% for title in data %}
-  <li><a href="/recipe/{{title}}">{{ title }}</a></li>
+  {% for recipe in recipes %}
+  <li>
+    <a href="{% url 'recipeview' pk=recipe.pk %}">{{ recipe.title }}</a> by
+    <a href="{% url 'authorview' pk=recipe.author.pk %}">{{recipe.author}}</a>
+  </li>
   {% endfor %}
 </ul>
+
+{% endblock %}
